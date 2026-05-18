@@ -3,6 +3,10 @@ const queryInput = document.getElementById('query-input');
 const sendBtn = document.getElementById('send-btn');
 const langSelect = document.getElementById('language-select');
 const statusBadge = document.getElementById('connection-status');
+const imageBtn = document.getElementById('image-btn');
+const imageUpload = document.getElementById('image-upload');
+
+let attachedImage = null;
 
 // Handle Textarea Auto-resize
 queryInput.addEventListener('input', function() {
@@ -20,13 +24,30 @@ queryInput.addEventListener('keydown', function(e) {
 
 sendBtn.addEventListener('click', sendQuery);
 
+imageBtn.addEventListener('click', () => {
+    imageUpload.click();
+});
+
+imageUpload.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            attachedImage = e.target.result;
+            // Instantly send an analysis request
+            sendQuery("Please scan this image and tell me what the issue is.", true);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 // Allow clicking chips to pre-fill and send
 window.setQuery = function(text) {
     queryInput.value = text;
     sendQuery();
 }
 
-function appendMessage(text, sender, isRetrieved = false) {
+function appendMessage(text, sender, isRetrieved = false, imageUrl = null) {
     // Hide welcome message if it's the first chat
     const welcome = document.querySelector('.welcome-message');
     if (welcome) welcome.style.display = 'none';
@@ -39,6 +60,15 @@ function appendMessage(text, sender, isRetrieved = false) {
         badge.className = 'retrieval-badge';
         badge.innerHTML = '<i class="fa-solid fa-check-circle"></i> Source: Vetted Guidelines';
         msgDiv.appendChild(badge);
+    }
+    
+    if (imageUrl) {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.style.maxWidth = '100%';
+        img.style.borderRadius = '8px';
+        img.style.marginBottom = '10px';
+        msgDiv.appendChild(img);
     }
     
     const textSpan = document.createElement('div');
@@ -69,16 +99,20 @@ function removeTypingIndicator() {
     }
 }
 
-async function sendQuery() {
-    const query = queryInput.value.trim();
-    if (!query) return;
+async function sendQuery(forcedQuery = null, isImageScan = false) {
+    const query = forcedQuery || queryInput.value.trim();
+    if (!query && !attachedImage) return;
+
+    const currentImage = attachedImage;
 
     // Reset input
     queryInput.value = '';
     queryInput.style.height = 'auto';
+    attachedImage = null; // Clear attachment after sending
+    imageUpload.value = ''; // Reset file input
 
     // Show user message
-    appendMessage(query, 'user');
+    appendMessage(isImageScan ? "Uploaded an image for scan." : query, 'user', false, currentImage);
 
     // Show typing indicator
     showTypingIndicator();
@@ -91,7 +125,7 @@ async function sendQuery() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ query, language })
+            body: JSON.stringify({ query, language, image: currentImage })
         });
 
         const data = await response.json();
