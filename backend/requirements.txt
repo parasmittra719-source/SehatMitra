@@ -1,0 +1,8 @@
+Flask>=3.0.0
+flask-cors>=4.0.0
+transformers>=4.38.2
+torch>=2.6.0
+accelerate>=0.27.2
+sentence-transformers>=2.5.1
+chromadb>=0.4.24
+sqlite3-api

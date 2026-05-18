@@ -1,0 +1,36 @@
+SehatMitra 3-Minute Demo Script
+
+(0:00 – 0:20) Introduction
+[Camera/Voiceover]: "Hello, I’m [Name], and this is SehatMitra, an offline AI health assistant for rural India. We address a critical problem: 70% of Indians lack reliable internet, cutting them off from vital healthcare information."
+[Visual]: Slide showing "Problem: Healthcare info gap in rural India."
+
+(0:20 – 0:40) Problem Story
+[Narrative]: "Imagine a farmer in a remote village feeling unwell with a high fever. He can’t easily travel to a clinic and has no internet to search for advice. SehatMitra lets him talk to an AI in Hindi, completely offline, to get immediate, grounded guidance."
+[Visual]: Map of India highlighting rural areas; statistic on screen.
+
+(0:40 – 0:50) Solution Overview
+[Narrative]: "SehatMitra runs locally on device. It uses Gemma 4’s advanced multilingual model to understand Hindi and cross-references queries with a local database of vetted health guidelines."
+[Visual]: System Architecture diagram showing User -> Flask API -> Gemma 4 + Local DB.
+
+(0:50 – 1:50) Live Demo
+[Action]: Screen-share the SehatMitra web UI.
+[Narrative]: "Let's see it in action. I'll type a common symptom: 'मुझे बुखार और सर दर्द है' (I have a fever and headache)."
+[Action]: Click 'Ask'. Show the typing indicator.
+[Narrative]: "The system processes this offline. It retrieves WHO guidelines from its local database and generates a response."
+[Action]: Response appears with the "Source: Vetted Guidelines" badge.
+[Narrative]: "Notice the answer is clear, in Hindi, and clearly states it's based on vetted sources. It advises rest, hydration, and when to see a doctor."
+
+(1:50 – 2:20) Backend Peek
+[Action]: Switch to terminal showing Flask logs.
+[Narrative]: "Here’s a quick look under the hood. You can see the Flask backend receiving the query, performing the local retrieval, and calling the Gemma 4 pipeline to generate the response."
+
+(2:20 – 2:40) Impact & Wow Factor
+[Narrative]: "Unlike generic cloud chatbots, SehatMitra is designed specifically for low-resource environments. By combining Gemma 4's capabilities with local retrieval, we ensure safety and reliability without needing an internet connection."
+[Visual]: Highlight the "Offline-First" badge in the UI.
+
+(2:40 – 2:55) Wrap-Up
+[Narrative]: "Built in just 16 hours by a single developer, this prototype proves the viability of on-device AI for social good. Our next steps include adding voice I/O and expanding the local knowledge base."
+
+(2:55 – 3:00) Call to Action
+[Narrative]: "Thank you for watching. Please check out our Kaggle write-up and the open-source repository for full details."
+[Visual]: Final slide with URLs and contact info.
