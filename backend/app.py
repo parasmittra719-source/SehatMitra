@@ -43,7 +43,7 @@ KNOWLEDGE_BASE = [
         ),
     },
     {
-        "keywords": ["headache", "head ache", "head pain", "sar dard", "sir dard", "migraine", "sirdard", "head", "सर दर्द", "सिरदर्द", "सिर दर्द"],
+        "keywords": ["headache", "head ache", "head pain", "sar dard", "sir dard", "migraine", "sirdard", "head", "सर दर्द", "सिरदर्द", "सिर दर्द", "headach", "headeche"],
         "en": (
             "Headaches are often caused by dehydration, stress, or lack of sleep. "
             "Drink a full glass of water, rest in a quiet dark room, and apply a cold pack to your forehead. "
@@ -61,7 +61,8 @@ KNOWLEDGE_BASE = [
         "keywords": [
             "stomach ache", "stomach pain", "stomach", "belly", "belly pain",
             "abdominal", "abdomen", "pet dard", "pet mein dard", "pait dard",
-            "navel", "stomach cramp", "cramp", "stomach hurt", "पेट दर्द", "पेट में दर्द"
+            "navel", "stomach cramp", "cramp", "stomach hurt", "पेट दर्द", "पेट में दर्द",
+            "stomatch", "stomac", "stomachache"
         ],
         "en": (
             "Stomach pain has many causes — indigestion, gas, or a mild infection. "
