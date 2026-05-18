@@ -29,7 +29,7 @@ if not USE_MOCK:
 # ---------------------------------------------------------------------------
 KNOWLEDGE_BASE = [
     {
-        "keywords": ["fever", "temperature", "bukhar", "bukhaar", "tap", "jwar"],
+        "keywords": ["fever", "temperature", "bukhar", "bukhaar", "tap", "jwar", "बुखार", "ताप", "ज्वर"],
         "en": (
             "Fever is usually a sign that your body is fighting an infection. "
             "Rest well, drink plenty of fluids (water, ORS, or coconut water), and keep yourself cool with a damp cloth. "
@@ -43,7 +43,7 @@ KNOWLEDGE_BASE = [
         ),
     },
     {
-        "keywords": ["headache", "head ache", "head pain", "sar dard", "sir dard", "migraine", "sirdard"],
+        "keywords": ["headache", "head ache", "head pain", "sar dard", "sir dard", "migraine", "sirdard", "head", "सर दर्द", "सिरदर्द", "सिर दर्द"],
         "en": (
             "Headaches are often caused by dehydration, stress, or lack of sleep. "
             "Drink a full glass of water, rest in a quiet dark room, and apply a cold pack to your forehead. "
@@ -61,7 +61,7 @@ KNOWLEDGE_BASE = [
         "keywords": [
             "stomach ache", "stomach pain", "stomach", "belly", "belly pain",
             "abdominal", "abdomen", "pet dard", "pet mein dard", "pait dard",
-            "navel", "stomach cramp", "cramp", "stomach hurt"
+            "navel", "stomach cramp", "cramp", "stomach hurt", "पेट दर्द", "पेट में दर्द"
         ],
         "en": (
             "Stomach pain has many causes — indigestion, gas, or a mild infection. "
@@ -81,7 +81,7 @@ KNOWLEDGE_BASE = [
             "gas", "bloating", "bloat", "flatulence", "burp", "burping",
             "gassy", "acidity", "acid", "indigestion", "heartburn",
             "gas and bloating", "gas pain", "pet phoolna", "gas banna",
-            "afara", "afra", "belching"
+            "afara", "afra", "belching", "गैस", "पेट फूलना", "एसिडिटी"
         ],
         "en": (
             "Gas and bloating are usually caused by swallowing air, eating too fast, or certain foods (beans, cabbage, carbonated drinks). "
@@ -102,7 +102,7 @@ KNOWLEDGE_BASE = [
         "keywords": [
             "diarrhea", "diarrhoea", "loose motion", "loose stool",
             "loose motions", "watery stool", "runny stool",
-            "dast", "daast", "पेचिश", "पतला मल"
+            "dast", "daast", "पेचिश", "पतला मल", "दस्त"
         ],
         "en": (
             "For diarrhea, the most important thing is to prevent dehydration. "
@@ -120,7 +120,7 @@ KNOWLEDGE_BASE = [
     {
         "keywords": [
             "vomit", "vomiting", "nausea", "nauseous", "throw up", "puking",
-            "ulti", "उल्टी", "ji machlana", "ji machalna", "queasy"
+            "ulti", "उल्टी", "ji machlana", "ji machalna", "queasy", "जी मिचलाना"
         ],
         "en": (
             "Nausea and vomiting are often caused by food poisoning, stomach infection, or motion sickness. "
@@ -139,7 +139,7 @@ KNOWLEDGE_BASE = [
         "keywords": [
             "cold", "cough", "runny nose", "sore throat", "sneezing",
             "congestion", "stuffy nose", "flu", "influenza",
-            "zukam", "khansi", "khasi", "जुकाम", "खांसी", "gala dard", "naak band"
+            "zukam", "khansi", "khasi", "जुकाम", "खांसी", "gala dard", "naak band", "गला दर्द", "सर्दी"
         ],
         "en": (
             "Common cold and cough symptoms usually resolve in 7-10 days. "
@@ -159,16 +159,16 @@ KNOWLEDGE_BASE = [
     {
         "keywords": [
             "back pain", "back ache", "lower back", "spine", "kamar dard",
-            "kamar mein dard", "कमर दर्द", "pith dard", "back hurt"
+            "kamar mein dard", "कमर दर्द", "pith dard", "back hurt", "pain", "dard", "दर्द"
         ],
         "en": (
-            "Most back pain is caused by muscle strain or poor posture. "
+            "Most general pain or back pain is caused by muscle strain or poor posture. "
             "Apply a warm compress or heating pad for 15-20 minutes. Gentle stretching and short walks help. "
             "Ibuprofen or Diclofenac gel can relieve pain. Avoid bed rest for more than 1-2 days. "
             "If pain radiates down your leg, is associated with numbness/tingling, or follows an injury, see a doctor. [Source: NHS]"
         ),
         "hi": (
-            "अधिकांश कमर दर्द मांसपेशियों में खिंचाव या गलत तरीके से बैठने से होता है। "
+            "अधिकांश दर्द या कमर दर्द मांसपेशियों में खिंचाव या गलत तरीके से बैठने से होता है। "
             "15-20 मिनट गर्म सेंक करें। हल्की स्ट्रेचिंग और छोटी सैर फायदेमंद है। "
             "Ibuprofen या Diclofenac gel दर्द कम करने में मदद करती है। 1-2 दिन से ज़्यादा बिस्तर पर न लेटें। "
             "अगर दर्द पैर तक जाए, सुन्नपन हो, या चोट के बाद हो, तो डॉक्टर से मिलें। [स्रोत: NHS]"
